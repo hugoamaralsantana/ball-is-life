@@ -1,67 +1,138 @@
-$primary: rgb(15, 15, 15);
-$secondary: orange;
-
 //Import Bootstrap
 @import '../../node_modules/bootstrap/';
 
 .table-striped > tbody > tr {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
-  color: black;
+	color: black;
 }
 
 .table > tbody > tr:nth-child(even) > td {
-  color: black;
+	color: black;
 }
 
-li:hover {
-  cursor: pointer;
+.page-item .page-link {
+	color: black !important;
+}
+
+.page-item.increment-tab.disabled .page-link {
+	color: rgb(184, 184, 184) !important;
+}
+
+.page-item.increment-tab .page-link {
+	color: black !important;
+}
+
+.page-item.active .page-link {
+	background-color: black !important;
+	color: white !important;
+	border-color: black !important;
+}
+
+.page-item .page-link {
+	cursor: pointer;
 }
 
 table {
-  table-layout: fixed;
-  width: 100%;
+	table-layout: fixed;
+	width: 100%;
+}
+
+img {
+	position: absolute;
+	min-height: 50px !important;
+	height: 10vh;
+	width: auto;
+	top: 35vh;
+	left: 45vw;
+	animation: rotating linear 2s infinite, pulse ease 1s infinite, fadeOut 3s;
+	opacity: 0%;
+}
+
+figure {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50vh;
+	bottom: 0;
+	animation: fadeOut 3s;
+	opacity: 0%;
 }
 
 #table-container {
-  min-height: 453px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	min-height: 453px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*
-.table-striped > tbody > tr:nth-child(odd):hover {
-  animation-name: strut;
-  animation-timing-function: ease;
+#fullApp {
+	animation: fadeIn ease 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }
 
-.table > tbody > tr:nth-child(even):hover {
-  animation-name: strut;
-  animation-timing-function: ease;
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-@keyframes strut {
-  0% {
-    box-shadow: 0px 0px 0px $secondary;
-    transform: translateY(0px);
-    transform: translateX(0px);
-  }
-
-  100% {
-    transform: translateY(-5px);
-    transform: translateX(5px);
-    box-shadow: 10px 10px 5px $secondary;
-  }
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
-*/
+
+@keyframes pulse {
+	0% {
+		height: 10vh;
+		width: auto;
+	}
+	50% {
+		height: 12vh;
+		width: auto;
+	}
+	100% {
+		height: 10vh;
+		width: auto;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		display: block;
+	}
+	70% {
+		opacity: 1;
+		display: block;
+	}
+	80% {
+		opacity: 0;
+		display: block;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
