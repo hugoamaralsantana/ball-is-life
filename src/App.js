@@ -18,14 +18,13 @@ function App() {
 				<img
 					src={require('./cryingjordan.png')}
 					alt='Crying Jordan Loader'
+					className='text-center'
 				></img>
 				<figure class='text-center'>
 					<blockquote class='blockquote'>
-						<p>A well-known quote, contained in a blockquote element.</p>
+						<p>The key to success is failure.</p>
 					</blockquote>
-					<figcaption class='blockquote-footer'>
-						Someone famous in <cite title='Source Title'>Source Title</cite>
-					</figcaption>
+					<figcaption class='blockquote-footer'>Michael Jordan</figcaption>
 				</figure>
 			</div>
 			<div className='m-5' id='fullApp'>

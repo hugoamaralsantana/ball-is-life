@@ -42,11 +42,10 @@ table {
 
 img {
 	position: absolute;
-	min-height: 50px !important;
+	left: 45%;
 	height: 10vh;
 	width: auto;
 	top: 35vh;
-	left: 45vw;
 	animation: rotating linear 2s infinite, pulse ease 1s infinite, fadeOut 3s;
 	opacity: 0%;
 }
