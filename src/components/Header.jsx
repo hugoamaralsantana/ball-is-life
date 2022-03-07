@@ -2,7 +2,7 @@ import SearchBar from './SearchBar';
 
 function Header() {
   return (
-    <div className='container mb-3'>
+    <div className='container mb-4'>
       <div className='row'>
         <div className='col'>
           <h1 className='display-1 m-0'>NBA TEAMS</h1>
