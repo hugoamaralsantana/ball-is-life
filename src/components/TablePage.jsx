@@ -11,6 +11,7 @@ function TablePage(props) {
 	const teams = teamsQuery.data?.data; // extract array of team JSON objects from api call response (with null handling)
 
 	const [currPage, setCurrPage] = useState(0);
+	const [selectedRow, setSelectRow] = useState(null);
 
 	const pageStart = currPage * pageSize; //Determine start point for rows that will be displayed
 	const pageEnd = pageStart + pageSize; //Determine end point for rows that will be displayed
@@ -24,6 +25,8 @@ function TablePage(props) {
 					<TeamTable
 						teams={teams.slice(pageStart, pageEnd)}
 						selectTeam={props.selectTeam}
+						setSelectRow={setSelectRow}
+						selectedRow={selectedRow}
 					/>
 					<Pagination
 						currPage={currPage}
