@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import Loading from './Loading';
+import { Offcanvas } from 'react-bootstrap';
 
 function SideBar(props) {
 	const selectedTeamGamesQuery = useQuery('selectedTeamGames', () =>
@@ -21,35 +22,27 @@ function SideBar(props) {
 	// extract array of team JSON objects from api call response (with null handling)
 
 	return (
-		<div
-			className='offcanvas show offcanvas-end'
-			tabIndex='-1'
-			id='team-details'
-			aria-labelledby='Team Details'
-		>
+		<>
 			{props.selectedTeam ? (
 				<>
-					<div className='offcanvas-header'>
-						<h5 id='team-name'>{props.selectedTeam.name}</h5>
-						<button
-							type='button'
-							className='btn-close text-reset'
-							data-bs-dismiss='offcanvas'
-							aria-label='Close'
-							onClick={() => {
-								props.selectTeam(null);
-							}}
-						></button>
-					</div>
-					<div className='offcanvas-body'>
-						<h5>{props.selectedTeam.full_name}</h5>
-						<h5>{selectedTeamGames.length}</h5>
-					</div>
+					<Offcanvas
+						show={props.show}
+						onHide={props.handleClose}
+						placement={'end'}
+					>
+						<Offcanvas.Header closeButton>
+							<Offcanvas.Title>Offcanvas</Offcanvas.Title>
+						</Offcanvas.Header>
+						<Offcanvas.Body>
+							Some text as placeholder. In real life you can have the elements
+							you have chosen. Like, text, images, lists, etc.
+						</Offcanvas.Body>
+					</Offcanvas>
 				</>
 			) : (
-				<Loading />
+				<></>
 			)}
-		</div>
+		</>
 	);
 }
 

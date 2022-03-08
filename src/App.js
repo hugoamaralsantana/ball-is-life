@@ -12,6 +12,10 @@ const fetchTeams = () =>
 function App() {
 	const [selectedTeam, selectTeam] = useState(null);
 
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	const mjQuotes = [
 		'The key to success is failure.',
 		'Failure makes me work even harder',
@@ -51,9 +55,18 @@ function App() {
 			</div>
 			<div className='m-5' id='fullApp'>
 				<Header />
-				<TablePage teamData={fetchTeams} selectTeam={selectTeam} />
+				<TablePage
+					teamData={fetchTeams}
+					selectTeam={selectTeam}
+					handleShow={handleShow}
+				/>
 			</div>
-			<SideBar selectedTeam={selectedTeam} selectTeam={selectTeam} />
+			<SideBar
+				selectedTeam={selectedTeam}
+				selectTeam={selectTeam}
+				show={show}
+				handleClose={handleClose}
+			/>
 		</QueryClientProvider>
 	);
 }

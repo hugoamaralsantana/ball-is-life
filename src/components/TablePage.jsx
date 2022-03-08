@@ -50,6 +50,7 @@ function TablePage(props) {
 						selectedRow={selectedRow}
 						currSort={currSort}
 						setSort={setSort}
+						handleShow={props.handleShow}
 					/>
 					<Pagination
 						currPage={currPage}

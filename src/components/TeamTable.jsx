@@ -72,6 +72,7 @@ function TeamTable({ teams, ...props }) {
 							selectTeam={props.selectTeam}
 							setSelectRow={props.setSelectRow}
 							selectedRow={props.selectedRow}
+							handleShow={props.handleShow}
 						/>
 					))}
 				</tbody>

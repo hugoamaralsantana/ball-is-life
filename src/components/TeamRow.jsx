@@ -9,6 +9,7 @@ function TeamRow(props) {
 			onClick={() => {
 				props.selectTeam(teamData);
 				props.setSelectRow(teamData.id);
+				props.handleShow();
 			}}
 			data-bs-toggle='offcanvas show'
 			data-href='#team-details'
