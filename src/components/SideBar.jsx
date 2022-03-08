@@ -2,8 +2,6 @@ import { useQuery } from 'react-query';
 import Loading from './Loading';
 
 function SideBar(props) {
-	console.log(props.selectedTeam);
-
 	const selectedTeamGamesQuery = useQuery('selectedTeamGames', () =>
 		fetch(
 			'' +
@@ -24,7 +22,7 @@ function SideBar(props) {
 
 	return (
 		<div
-			className='offcanvas offcanvas-end'
+			className='offcanvas show offcanvas-end'
 			tabIndex='-1'
 			id='team-details'
 			aria-labelledby='Team Details'

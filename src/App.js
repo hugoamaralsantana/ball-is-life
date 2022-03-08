@@ -23,11 +23,11 @@ function App() {
 		<QueryClientProvider client={queryClient}>
 			<div
 				id='loading-overlay'
-				class='d-flex align-items-center justify-content-center'
+				className='d-flex align-items-center justify-content-center'
 			>
 				<div
 					id='inner-overlay'
-					class='d-flex align-items-center justify-content-center'
+					className='d-flex align-items-center justify-content-center'
 				>
 					<img
 						src={require('./cryingjordan.png')}
@@ -37,13 +37,15 @@ function App() {
 				</div>
 				<div
 					id='inner-overlay'
-					class='d-flex align-items-center justify-content-center'
+					className='d-flex align-items-center justify-content-center'
 				>
-					<figure class='text-center'>
-						<blockquote class='blockquote'>
+					<figure className='text-center'>
+						<blockquote className='blockquote'>
 							<p>{mjQuotes[Math.floor(Math.random() * 4)]}</p>
 						</blockquote>
-						<figcaption class='blockquote-footer'>Michael Jordan</figcaption>
+						<figcaption className='blockquote-footer'>
+							Michael Jordan
+						</figcaption>
 					</figure>
 				</div>
 			</div>

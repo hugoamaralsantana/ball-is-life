@@ -49,10 +49,45 @@ thead {
 
 tr.selected {
 	background-color: rgb(25, 25, 25) !important;
+	text-align: center;
 
 	& > td {
 		color: orange !important;
 	}
+}
+
+th.selected {
+	color: orange !important;
+}
+
+th:hover {
+	cursor: pointer;
+}
+
+.under-anim {
+	position: relative;
+}
+
+.under-anim:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: orange;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.under-anim.selected:after {
+	transform: scaleX(1);
+}
+
+.under-anim:hover:after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
 
 table {
