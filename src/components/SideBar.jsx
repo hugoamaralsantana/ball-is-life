@@ -1,25 +1,17 @@
 import { useQuery } from 'react-query';
-import Loading from './Loading';
+import { fetchGames } from '../api';
 import { Offcanvas } from 'react-bootstrap';
 
 function SideBar(props) {
+	/*
+	console.log(fetchGames(props.selectTeam.id));
 	const selectedTeamGamesQuery = useQuery('selectedTeamGames', () =>
-		fetch(
-			'' +
-				(props.selectedTeam
-					? 'https://www.balldontlie.io/api/v1/games/?team_ids[]=' +
-					  props.selectedTeam.id
-					: 'https://www.balldontlie.io/api/v1/games/')
-		).then((res) => res.json())
-	); //Pull in team game data from api
+		fetchGames(props.selectTeam)
+	);
 
-	let selectedTeamGames = selectedTeamGamesQuery.data?.data;
-
-	if (selectedTeamGames === null) {
-		selectedTeamGames = [];
-	}
-
-	// extract array of team JSON objects from api call response (with null handling)
+	const teamGame = selectedTeamGamesQuery.data;
+	console.log('TEAM ' + teamGame);
+	*/
 
 	return (
 		<>
@@ -27,15 +19,27 @@ function SideBar(props) {
 				<>
 					<Offcanvas
 						show={props.show}
-						onHide={props.handleClose}
+						onHide={props.handleClose()}
 						placement={'end'}
+						className={'offcanvas'}
 					>
 						<Offcanvas.Header closeButton>
-							<Offcanvas.Title>Offcanvas</Offcanvas.Title>
+							<Offcanvas.Title className='ml-4 mt-2'>
+								<h1>{props.selectedTeam.name}</h1>
+							</Offcanvas.Title>
 						</Offcanvas.Header>
 						<Offcanvas.Body>
-							Some text as placeholder. In real life you can have the elements
-							you have chosen. Like, text, images, lists, etc.
+							<h5 className='mb-4'>
+								<strong>Team Full Name: </strong>
+								{props.selectedTeam.full_name}
+							</h5>
+							<h5>Total Games in 2021: </h5>
+							<h3 className='mt-5 mb-3'>Random Game Details:</h3>
+							<h5 className='mb-4'></h5>
+							<h5 className='mb-4'>Home Team: </h5>
+							<h5 className='mb-4'>Home Team Score: </h5>
+							<h5 className='mb-4'>Visitor Team: </h5>
+							<h5 className='mb-4'>Visitor Team Score: </h5>
 						</Offcanvas.Body>
 					</Offcanvas>
 				</>

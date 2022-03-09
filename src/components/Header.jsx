@@ -1,20 +1,7 @@
 import SearchBar from './SearchBar';
-import AutoComplete from './AutoComplete';
 import '../styles/InterfaceTheme.scss';
-import { useQuery } from 'react-query';
-import { useState } from 'react';
 
-function Header() {
-	const [playerQuery, updatePlayerQuery] = useState('');
-
-	const playerSearchQuery = useQuery('playerSearch', () =>
-		fetch(
-			'https://www.balldontlie.io/api/v1/players?search=' + playerQuery
-		).then((res) => res.json())
-	);
-
-	const queriedPlayers = playerSearchQuery.data?.data;
-
+function Header(props) {
 	return (
 		<div className='container mb-4 ml-0'>
 			<div className='row'>
@@ -23,19 +10,9 @@ function Header() {
 				</div>
 				<div className='col d-flex align-items-end justify-content-end px-0 pb-3 holder'>
 					<SearchBar
-						updatePlayerQuery={updatePlayerQuery}
-						playerQuery={playerQuery}
+						updateTeamQuery={props.updateTeamQuery}
+						teamQuery={props.teamQuery}
 					/>
-					<>
-						{playerQuery === '' ? (
-							<div styles='display:none' />
-						) : (
-							<AutoComplete
-								updatePlayerQuery={updatePlayerQuery}
-								autoCompleteList={queriedPlayers.slice(0, 10)}
-							/>
-						)}
-					</>
 				</div>
 			</div>
 		</div>

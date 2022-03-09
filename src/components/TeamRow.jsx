@@ -11,8 +11,6 @@ function TeamRow(props) {
 				props.setSelectRow(teamData.id);
 				props.handleShow();
 			}}
-			data-bs-toggle='offcanvas show'
-			data-href='#team-details'
 		>
 			<td className='text-center noselect'>{teamData.name}</td>
 			<td className='text-center noselect'>{teamData.city}</td>

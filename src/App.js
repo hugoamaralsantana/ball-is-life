@@ -6,13 +6,13 @@ import TablePage from './components/TablePage';
 import './styles/InterfaceTheme.scss';
 
 const queryClient = new QueryClient();
-const fetchTeams = () =>
-	fetch('https://www.balldontlie.io/api/v1/teams').then((res) => res.json());
 
 function App() {
-	const [selectedTeam, selectTeam] = useState(null);
+	const [selectedTeam, selectTeam] = useState({ id: 0 });
+	const [selectedRow, setSelectRow] = useState(-1);
+	const [teamQuery, updateTeamQuery] = useState('');
 
-	const [show, setShow] = useState(false);
+	const [show, setShow] = useState(true);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
@@ -54,11 +54,13 @@ function App() {
 				</div>
 			</div>
 			<div className='m-5' id='fullApp'>
-				<Header />
+				<Header updateTeamQuery={updateTeamQuery} teamQuery={teamQuery} />
 				<TablePage
-					teamData={fetchTeams}
 					selectTeam={selectTeam}
 					handleShow={handleShow}
+					teamQuery={teamQuery}
+					selectedRow={selectedRow}
+					setSelectRow={setSelectRow}
 				/>
 			</div>
 			<SideBar
@@ -66,6 +68,7 @@ function App() {
 				selectTeam={selectTeam}
 				show={show}
 				handleClose={handleClose}
+				setSelectRow={setSelectRow}
 			/>
 		</QueryClientProvider>
 	);

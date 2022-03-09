@@ -1,15 +1,23 @@
+import { debounce } from '../debounce';
+
 function SearchBar(props) {
 	return (
-		<form className='form-inline'>
+		<form
+			className='form-inline'
+			onSubmit={(event) => props.updateTeamQuery(event.target.value)}
+		>
 			<div className='form-group mb-0'>
 				<input
 					className='form-control search mb-0'
 					type='search'
-					placeholder='Search players'
+					id='fetchInput'
+					placeholder='Search teams'
 					autoComplete='off'
 					aria-label='Search'
-					value={props.playerQuery}
-					onChange={(event) => props.updatePlayerQuery(event.target.value)}
+					onChange={debounce(
+						(event) => props.updateTeamQuery(event.target.value),
+						700
+					)}
 				></input>
 			</div>
 			<button className='btn btn-dark mx-sm-1 pt-1' type='submit'>
