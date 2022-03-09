@@ -56,6 +56,14 @@ tr.selected {
 	}
 }
 
+td.text-center.noselect {
+	animation: appear ease 1s;
+}
+
+.offcanvas-body > h5 {
+	padding-left: 1rem;
+}
+
 th:hover {
 	cursor: pointer;
 }
@@ -165,23 +173,10 @@ th.selected {
 
 @keyframes appear {
 	0% {
-		height: 0;
-		width: 0;
+		opacity: 0;
 	}
 	100% {
-		height: 16px;
-		width: 16px;
-	}
-}
-
-@keyframes disappear {
-	0% {
-		height: 16px;
-		width: 16px;
-	}
-	100% {
-		height: 0;
-		width: 0;
+		opacity: 1;
 	}
 }
 

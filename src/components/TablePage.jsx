@@ -25,19 +25,20 @@ const sort_by = (field, reverse, primer) => {
 
 function TablePage(props) {
 	const teamsQuery = useQuery('teams', fetchTeams); //Pull in team data through props
+
 	const teams = teamsQuery?.data; // extract array of team JSON objects from api call response (with null handling)
 
 	const [currPage, setCurrPage] = useState(0);
 	const [currSort, setSort] = useState('');
 
-	console.log(currSort);
-
 	const pageStart = currPage * pageSize; //Determine start point for rows that will be displayed
 	const pageEnd = pageStart + pageSize; //Determine end point for rows that will be displayed
 
+	//let fillTeams = structuredClone(teams);
 	let fillTeams = teams;
 
-	console.log('Check sort method');
+	console.log(fillTeams);
+	console.log(teams);
 
 	if (currSort !== '') {
 		teams.sort(sort_by(currSort, false, (a) => a.toUpperCase()));
