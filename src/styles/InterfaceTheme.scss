@@ -11,14 +11,14 @@
 	}
 }
 
-thead {
-	background-color: black;
-	color: white;
-}
-
 .table-striped > tbody > tr {
 	position: relative;
 	animation: popBack ease 200ms;
+}
+
+thead {
+	background-color: black;
+	color: white;
 }
 
 .table-striped > tbody > tr > td {
@@ -56,16 +56,13 @@ tr.selected {
 	}
 }
 
-th.selected {
-	color: orange !important;
-}
-
 th:hover {
 	cursor: pointer;
 }
 
 .under-anim {
 	position: relative;
+	width: 100%;
 }
 
 .holder {
@@ -134,6 +131,25 @@ figure {
 	opacity: 0%;
 }
 
+th {
+	& > .bi {
+		transform: scaleX(0);
+		transition: transform 0.25s ease-out;
+	}
+}
+
+th.selected {
+	color: orange !important;
+
+	& > .bi {
+		transform: scaleX(1);
+	}
+}
+
+.bi.bi-caret-down-fill {
+	margin-left: 10px;
+}
+
 #table-container {
 	min-height: 453px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -145,6 +161,28 @@ figure {
 	animation: fadeIn ease 3s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+	0% {
+		height: 0;
+		width: 0;
+	}
+	100% {
+		height: 16px;
+		width: 16px;
+	}
+}
+
+@keyframes disappear {
+	0% {
+		height: 16px;
+		width: 16px;
+	}
+	100% {
+		height: 0;
+		width: 0;
+	}
 }
 
 @keyframes fadeIn {

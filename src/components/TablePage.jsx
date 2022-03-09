@@ -35,15 +35,13 @@ function TablePage(props) {
 	const pageStart = currPage * pageSize; //Determine start point for rows that will be displayed
 	const pageEnd = pageStart + pageSize; //Determine end point for rows that will be displayed
 
+	let fillTeams = teams;
+
+	console.log('Check sort method');
+
 	if (currSort !== '') {
 		teams.sort(sort_by(currSort, false, (a) => a.toUpperCase()));
-	} else {
-		teams.sort(
-			sort_by('id', false, (a, b) => parseFloat(a.id) - parseFloat(b.id))
-		);
 	}
-
-	let fillTeams = teams;
 
 	if (props.teamQuery !== '') {
 		fillTeams = teams.filter((team) => {
