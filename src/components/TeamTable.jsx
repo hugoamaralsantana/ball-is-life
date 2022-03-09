@@ -1,6 +1,9 @@
 import TeamRow from './TeamRow';
 import '../styles/InterfaceTheme.scss';
 
+// IF STATEMENT SORT UPDATE
+//onClick={props.setSort(props.currSort === 'name' ? '' : 'name')}
+
 function TeamTable({ teams, ...props }) {
 	return (
 		<div className='mb-5' id='table-container'>
@@ -14,7 +17,9 @@ function TeamTable({ teams, ...props }) {
 									? 'text-center noselect under-anim selected'
 									: 'text-center noselect under-anim'
 							}
-							onClick={() => props.setSort('name')}
+							onClick={() => {
+								props.setSort(props.currSort === 'name' ? '' : 'name');
+							}}
 						>
 							Team Name
 						</th>
@@ -25,7 +30,9 @@ function TeamTable({ teams, ...props }) {
 									? 'text-center noselect under-anim selected'
 									: 'text-center noselect under-anim'
 							}
-							onClick={() => props.setSort('city')}
+							onClick={() => {
+								props.setSort('city');
+							}}
 						>
 							City
 						</th>
@@ -36,7 +43,9 @@ function TeamTable({ teams, ...props }) {
 									? 'text-center noselect under-anim selected'
 									: 'text-center noselect under-anim'
 							}
-							onClick={() => props.setSort('abbreviation')}
+							onClick={() => {
+								props.setSort('abbreviation');
+							}}
 						>
 							Abbreviation
 						</th>
@@ -47,7 +56,9 @@ function TeamTable({ teams, ...props }) {
 									? 'text-center noselect under-anim selected'
 									: 'text-center noselect under-anim'
 							}
-							onClick={() => props.setSort('conference')}
+							onClick={() => {
+								props.setSort('conference');
+							}}
 						>
 							Conference
 						</th>
@@ -58,7 +69,9 @@ function TeamTable({ teams, ...props }) {
 									? 'text-center noselect under-anim selected'
 									: 'text-center noselect under-anim'
 							}
-							onClick={() => props.setSort('division')}
+							onClick={() => {
+								props.setSort('division');
+							}}
 						>
 							Division
 						</th>
