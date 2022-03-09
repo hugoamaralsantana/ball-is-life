@@ -3,15 +3,12 @@ import { fetchGames } from '../api';
 import { Offcanvas } from 'react-bootstrap';
 
 function SideBar(props) {
-	/*
-	console.log(fetchGames(props.selectTeam.id));
-	const selectedTeamGamesQuery = useQuery('selectedTeamGames', () =>
-		fetchGames(props.selectTeam)
-	);
+	const selectedTeamGamesQuery = useQuery('selectedTeamGames', () => {
+		fetchGames(props.selectTeam);
+	});
 
-	const teamGame = selectedTeamGamesQuery.data;
+	const teamGame = selectedTeamGamesQuery;
 	console.log('TEAM ' + teamGame);
-	*/
 
 	return (
 		<>
@@ -19,19 +16,18 @@ function SideBar(props) {
 				<>
 					<Offcanvas
 						show={props.show}
-						onHide={props.handleClose()}
+						onHide={props.handleClose}
 						placement={'end'}
 						className={'offcanvas'}
 					>
 						<Offcanvas.Header closeButton>
 							<Offcanvas.Title className='ml-4 mt-2'>
-								<h1>{props.selectedTeam.name}</h1>
+								<h1>Title</h1>
 							</Offcanvas.Title>
 						</Offcanvas.Header>
 						<Offcanvas.Body>
 							<h5 className='mb-4'>
 								<strong>Team Full Name: </strong>
-								{props.selectedTeam.full_name}
 							</h5>
 							<h5>Total Games in 2021: </h5>
 							<h3 className='mt-5 mb-3'>Random Game Details:</h3>

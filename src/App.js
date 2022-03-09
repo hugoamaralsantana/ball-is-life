@@ -9,11 +9,14 @@ const queryClient = new QueryClient();
 
 function App() {
 	const [selectedTeam, selectTeam] = useState({ id: 0 });
-	const [selectedRow, setSelectRow] = useState(-1);
+	const [selectedRow, setSelectRow] = useState(0);
 	const [teamQuery, updateTeamQuery] = useState('');
 
-	const [show, setShow] = useState(true);
-	const handleClose = () => setShow(false);
+	const [show, setShow] = useState(false);
+	const handleClose = () => {
+		setShow(false);
+		setSelectRow(0);
+	};
 	const handleShow = () => setShow(true);
 
 	const mjQuotes = [
@@ -68,7 +71,6 @@ function App() {
 				selectTeam={selectTeam}
 				show={show}
 				handleClose={handleClose}
-				setSelectRow={setSelectRow}
 			/>
 		</QueryClientProvider>
 	);
