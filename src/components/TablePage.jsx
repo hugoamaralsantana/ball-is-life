@@ -36,20 +36,17 @@ function TablePage(props) {
 
 	//let fillTeams = structuredClone(teams);
 	let fillTeams = !!teams ? [...teams] : [];
+
 	if (currSort !== '')
 		fillTeams.sort(sort_by(currSort, false, (a) => a.toUpperCase()));
-	if (props.teamQuery !== '') {
+
+	if (props.teamQuery !== '' || fillTeams === undefined) {
 		fillTeams = fillTeams.filter((team) => {
 			return team.full_name
 				.toUpperCase()
 				.includes(props.teamQuery.toUpperCase());
 		});
 	}
-
-	console.log('SORT');
-	console.log(currSort);
-	console.log('TEAMS');
-	console.log(fillTeams);
 
 	//Here I use a ternary operator instead of having all the Error and Loading being handled by if statements
 	//If the data is present, display it, otherwise, display a Loading Spinner

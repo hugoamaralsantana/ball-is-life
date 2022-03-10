@@ -11,6 +11,7 @@ function App() {
 	const [selectedTeam, selectTeam] = useState({ id: 0 });
 	const [selectedRow, setSelectRow] = useState(0);
 	const [teamQuery, updateTeamQuery] = useState('');
+	console.log(teamQuery);
 
 	const [show, setShow] = useState(false);
 	const handleClose = () => {

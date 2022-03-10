@@ -1,11 +1,13 @@
 import { debounce } from '../debounce';
 
 function SearchBar(props) {
+	function handleSubmit(e) {
+		e.preventDefault();
+		props.updateTeamQuery(e.target.value);
+	}
+
 	return (
-		<form
-			className='form-inline'
-			onSubmit={(event) => props.updateTeamQuery(event.target.value)}
-		>
+		<form className='form-inline' onSubmit={handleSubmit}>
 			<div className='form-group mb-0'>
 				<input
 					className='form-control search mb-0'
@@ -20,11 +22,7 @@ function SearchBar(props) {
 					)}
 				></input>
 			</div>
-			<button
-				className='btn btn-dark mx-sm-1 pt-1'
-				type='button'
-				onClick={(event) => props.updateTeamQuery(event.target.value)}
-			>
+			<button className='btn btn-dark mx-sm-1 pt-1' type='submit'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='16'
