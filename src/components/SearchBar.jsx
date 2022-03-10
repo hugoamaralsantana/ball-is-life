@@ -20,7 +20,11 @@ function SearchBar(props) {
 					)}
 				></input>
 			</div>
-			<button className='btn btn-dark mx-sm-1 pt-1' type='submit'>
+			<button
+				className='btn btn-dark mx-sm-1 pt-1'
+				type='button'
+				onClick={(event) => props.updateTeamQuery(event.target.value)}
+			>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='16'
