@@ -4,6 +4,8 @@
 
 In this small UI project, I was tasked with generating a UI interface that would allow users to fully interact with the Teams and part of the Games section of the balldontlie.io API which serves NBA stats of all teams by **name**, **city**, **abbreviation**, **conference**, and **division**. The UI was to allow users to view a **paginated table** of all 30 teams pulled from the API, click on a team, and have an **offcanvas** toggle on the right displaying the selected team's extended game details which also featured one of their latest season's games. The UI was also to include a Search Bar that would filter the teams by the user's input.
 
+Utilized React, React-Query, Sass, Vanilla JavaScript, Bootstrap, and JQuery. (I also installed Cypress)
+
 ### Loading Screen
 
 The loading screen and its animations were purely done in **Sass** where I initially went with various JQuery-handled animations but decided that the use of it was excessive, so I translated them over to Sass. The animation was quick to make but centering the animation above the Michael Jordan quotes (which are randomly selected from a pool of quotes) without having the rotating MJ push the quote around was truly the difficult part in the process.
