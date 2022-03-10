@@ -195,22 +195,18 @@ th.selected {
 @keyframes popUp {
 	0% {
 		top: 0px;
-		right: 0px;
 	}
 	100% {
 		top: -5px;
-		right: -5px;
 	}
 }
 
 @keyframes popBack {
 	0% {
 		top: -5px;
-		right: -5px;
 	}
 	100% {
 		top: 0px;
-		right: 0px;
 	}
 }
 
