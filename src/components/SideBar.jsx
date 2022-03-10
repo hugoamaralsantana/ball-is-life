@@ -29,19 +29,25 @@ function SideBar(props) {
 						>
 							<Offcanvas.Header closeButton>
 								<Offcanvas.Title className='ml-2 mt-2'>
-									<h1>{props.selectedTeam?.name}</h1>
+									<h1>
+										<strong>{props.selectedTeam?.name}</strong>
+									</h1>
 								</Offcanvas.Title>
 							</Offcanvas.Header>
 							<Offcanvas.Body>
 								<div className='container'>
 									<div className='row mb-4'>
-										<div className='col-sm'>Team Full Name:</div>
+										<div className='col-sm'>
+											<strong>Team Full Name:</strong>
+										</div>
 										<div className='col-sm'>
 											{props.selectedTeam?.full_name}
 										</div>
 									</div>
 									<div className='row mb-5'>
-										<div className='col-sm'>Total Games in 2021:</div>
+										<div className='col-sm'>
+											<strong>Total Games in 2021:</strong>
+										</div>
 										{!!teamGameData ? (
 											<div className='col-sm'>{teamGameData?.length}</div>
 										) : (
@@ -50,11 +56,15 @@ function SideBar(props) {
 									</div>
 									<div className='row mb-4'>
 										<div className='col-sm'>
-											<h4>Random Game Details:</h4>
+											<h4>
+												<strong>Random Game Details:</strong>
+											</h4>
 										</div>
 									</div>
 									<div className='row mb-4'>
-										<div className='col-sm'>Date:</div>
+										<div className='col-sm'>
+											<strong>Date:</strong>
+										</div>
 										{!!teamGame ? (
 											<div className='col-sm'>{gameDate}</div>
 										) : (
@@ -62,7 +72,9 @@ function SideBar(props) {
 										)}
 									</div>
 									<div className='row mb-4'>
-										<div className='col-sm'>Home Team:</div>
+										<div className='col-sm'>
+											<strong>Home Team:</strong>
+										</div>
 										{!!teamGame ? (
 											<div className='col-sm'>
 												{teamGame?.home_team.full_name}
@@ -72,7 +84,9 @@ function SideBar(props) {
 										)}
 									</div>
 									<div className='row mb-4'>
-										<div className='col-sm'>Home Team Score:</div>
+										<div className='col-sm'>
+											<strong>Home Team Score:</strong>
+										</div>
 										{!!teamGame ? (
 											<div className='col-sm'>{teamGame?.home_team_score}</div>
 										) : (
@@ -80,7 +94,9 @@ function SideBar(props) {
 										)}
 									</div>
 									<div className='row mb-4'>
-										<div className='col-sm'>Visitor Team:</div>
+										<div className='col-sm'>
+											<strong>Visitor Team:</strong>
+										</div>
 										{!!teamGame ? (
 											<div className='col-sm'>
 												{teamGame?.visitor_team.full_name}
@@ -90,7 +106,9 @@ function SideBar(props) {
 										)}
 									</div>
 									<div className='row mb-4'>
-										<div className='col-sm'>Visitor Team Score:</div>
+										<div className='col-sm'>
+											<strong>Visitor Team Score:</strong>
+										</div>
 										{!!teamGame ? (
 											<div className='col-sm'>
 												{teamGame?.visitor_team_score}
