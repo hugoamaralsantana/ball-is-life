@@ -4,7 +4,11 @@
 
 In this small UI project, I was tasked with generating a UI interface that would allow users to fully interact with the Teams and part of the Games section of the balldontlie.io API which serves NBA stats of all teams by **name**, **city**, **abbreviation**, **conference**, and **division**. The UI was to allow users to view a **paginated table** of all 30 teams pulled from the API, click on a team, and have an **offcanvas** toggle on the right displaying the selected team's extended game details which also featured one of their latest season's games. The UI was also to include a Search Bar that would filter the teams by the user's input.
 
-Utilized React, React-Query, Sass, Vanilla JavaScript, Bootstrap, and JQuery. (I also installed Cypress)
+Utilized React, React-Query, Sass, Vanilla JavaScript, Bootstrap, Jest and JQuery.
+
+### Running the Web Application
+To run the code: Run **npm start** to run the application locally.
+To run the test suite: Run **npm test** to run the application test suite.
 
 ### Loading Screen
 

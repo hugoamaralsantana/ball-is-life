@@ -57,7 +57,7 @@ function SideBar(props) {
 									<div className='row mb-4'>
 										<div className='col-sm'>
 											<h4>
-												<strong>Random Game Details:</strong>
+												<strong>Highlight Game Details:</strong>
 											</h4>
 										</div>
 									</div>

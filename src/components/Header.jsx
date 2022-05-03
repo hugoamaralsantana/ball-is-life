@@ -6,7 +6,7 @@ function Header(props) {
 		<div className='container mb-4 ml-0'>
 			<div className='row'>
 				<div className='col'>
-					<h1 className='display-1 m-0'>NBA TEAMS.</h1>
+					<h1 className='display-1 m-0'>Ball is Life.</h1>
 				</div>
 				<div className='col d-flex align-items-end justify-content-end px-0 pb-3 holder'>
 					<SearchBar
