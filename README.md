@@ -7,7 +7,9 @@ In this small UI project, I was tasked with generating a UI interface that would
 Utilized React, React-Query, Sass, Vanilla JavaScript, Bootstrap, Jest and JQuery.
 
 ### Running the Web Application
-To run the code: Run **npm start** to run the application locally.
+1. Run `npm i` to install the necessary node packages
+2. Run `npm start` to run the application locally.
+
 To run the test suite: Run **npm test** to run the application test suite.
 
 ### Loading Screen
