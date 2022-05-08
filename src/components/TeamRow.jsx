@@ -6,6 +6,7 @@ function TeamRow(props) {
 	return (
 		<tr
 			className={teamData.id === props.selectedRow ? 'selected' : ''}
+			role='gridcell'
 			onClick={() => {
 				props.selectTeam(teamData);
 				props.setSelectRow(teamData.id);
